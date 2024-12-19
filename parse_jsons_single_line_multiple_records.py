@@ -34,6 +34,8 @@ def main():
         with open(data_directory+input_file_name) as inp:
             text_line = inp.readLine()
             output = standardize(text_line)
+            print("Output JSON records")
+            print(output)
     except FileNotFoundError as e:
         print("Error occurred while reading " + input_file_name)
         print(str(e))
