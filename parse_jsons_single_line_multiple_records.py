@@ -16,7 +16,7 @@ def standardize(text_line):
         json.loads(text_line)
         output_line = text_line
     except json.decoder.JSONDecodeError as e:
-        failure = re.search(pattern=r"^Extra data.*$", str(e))
+        failure = re.search(pattern=r"^Extra data.*$", string=str(e))
         if failure is not None:
             output_line = text_line[0:int(e.pos)] + "\n" + standardize(text_line[int(e.pos):])
     except Excpetion as e:
